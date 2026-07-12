@@ -1,0 +1,40 @@
+Project Scope: Study Buddy Finder
+
+Course: CS 3354 Software Engineering
+Team: Group 3
+Version: 1.0
+Date: July 12, 2026
+
+1. Project Purpose
+Study Buddy Finder is a web-based software application that helps university students connect with compatible study partners and form study groups. The application makes it easier to find classmates with shared courses or interests, organize a group, and schedule an in-person or virtual study session.
+
+2. Project Objectives
+The system will allow students to create accounts and study profiles, identify potential study partners, create or join study groups, and schedule sessions. Administrators will manage accounts and address inappropriate content or inactive accounts.
+
+3. In Scope
+- Student registration, login, logout, and password protection.
+- Student profiles containing major, courses, interests, and study preferences.
+- Partner search by shared course or academic interest.
+- Study-group creation, joining, viewing, and leaving.
+- Study-session scheduling with a date, time, physical location, or virtual option.
+- Administrative account and content moderation.
+- Storage of users, profiles, courses, groups, memberships, sessions, and audit records in MySQL.
+
+4. Out of Scope
+- Verification through the university enrollment database.
+- University single sign-on, calendar, learning-management, room-reservation, or video-conference integrations.
+- Payment processing, tutoring transactions, grade tracking, or academic advising.
+- Native iOS or Android applications.
+- Machine-learning recommendations based on grades or private academic records.
+
+5. Users and Stakeholders
+Students use the system to find peers, manage groups, and schedule sessions. Administrators manage accounts and content. The project team designs, develops, tests, and documents the system. The course instructor and TA review the project.
+
+6. Constraints and Assumptions
+The system will use Java, MySQL, MVC, and GitHub. It will be accessed through modern web and mobile browsers with an internet connection. Users must register, provide accurate profile information, and follow university conduct policies. Students may join multiple groups, and sessions may be in person or online.
+
+7. Quality Boundaries
+The system targets page and search-result loads within three seconds under normal conditions, support for at least 10,000 profiles and groups, and 99% semester availability. Passwords will be securely hashed, authenticated access will protect private features, and personal information will not be disclosed without consent or authorized need.
+
+8. Scope Acceptance Criteria
+The scope is met when a student can register, log in, create or update a profile, find compatible peers, create or join a group, and schedule a session, and when an administrator can manage accounts and moderate inappropriate content.
