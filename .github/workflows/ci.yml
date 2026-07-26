@@ -17,7 +17,9 @@ jobs:
           java-version: '17'
           cache: maven
       - run: mvn -B test
-      - run: docker build -f apps/api/Dockerfile -t study-buddy-api:test .
+      - name: Build production container
+        working-directory: .
+        run: docker build -f apps/api/Dockerfile -t study-buddy-api:test .
   web:
     runs-on: ubuntu-latest
     defaults:
