@@ -18,7 +18,7 @@ The original course scope files - [`ProjectScope.md`](ProjectScope.md) and [`pro
 
 1. Copy `.env.example` to `.env` and choose local-only database passwords.
 2. Run `docker compose -f infra/docker-compose.yml up --build`.
-3. Open `http://localhost:8080` and sign in with `ada@university.edu` / `StudyBuddy123!`.
+3. Open `http://localhost:8080` and sign in with `ada@utdallas.edu` / `StudyBuddy123!`.
 4. API docs are available at `http://localhost:8080/api/docs` and health at `/actuator/health`.
 
 ### Local development
@@ -58,4 +58,4 @@ Create focused feature branches, open pull requests into `main`, and keep the bu
 
 ## Deployment
 
-Use an always-on container platform and managed MySQL for production availability; a local machine or sleeping free-tier service does not satisfy the availability goal. Follow [deployment.md](docs/deployment.md) for environment variables, health checks, migrations, backups, and rollback.
+Use an always-on container platform and managed MySQL for production availability; a local machine or sleeping free-tier service does not satisfy the availability goal. Follow [deployment.md](docs/deployment.md) for environment variables, health checks, migrations, backups, and rollback. Railway-specific setup is in [railway.md](docs/railway.md).
