@@ -1,0 +1,4 @@
+package com.studybuddy.api.domain;
+import jakarta.persistence.*;
+@Entity @Table(name="course_enrollments", uniqueConstraints=@UniqueConstraint(columnNames={"user_id","course_id","term"}))
+public class CourseEnrollment { @Id @GeneratedValue(strategy=GenerationType.IDENTITY) private Long id; @ManyToOne(fetch=FetchType.LAZY) @JoinColumn(name="user_id",nullable=false) private User user; @ManyToOne(fetch=FetchType.LAZY) @JoinColumn(name="course_id",nullable=false) private Course course; @Column(nullable=false,length=32) private String term; @Column(name="active",nullable=false) private boolean active=true; protected CourseEnrollment(){} public CourseEnrollment(User u,Course c,String term){user=u;course=c;this.term=term;} public User getUser(){return user;} public Course getCourse(){return course;} public String getTerm(){return term;} public boolean isActive(){return active;} }

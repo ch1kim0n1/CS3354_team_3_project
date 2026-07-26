@@ -1,0 +1,8 @@
+flowchart TB
+  Browser["Student or Administrator\nBrowser"] --> React["React UI\nresponsive dashboard"]
+  React --> API["Spring Boot REST API\ncontrollers + service modules"]
+  API --> Security["Spring Security\nsession + CSRF + RBAC"]
+  API --> Match["Matching service\nexplainable score"]
+  API --> MySQL[("MySQL\nFlyway-managed schema")]
+  Security --> MySQL
+  Match --> MySQL

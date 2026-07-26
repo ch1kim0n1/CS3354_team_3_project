@@ -1,0 +1,5 @@
+package com.studybuddy.api.domain;
+import jakarta.persistence.*;
+import java.time.Instant;
+@Entity @Table(name="group_messages")
+public class GroupMessage { @Id @GeneratedValue(strategy=GenerationType.IDENTITY) private Long id; @ManyToOne(fetch=FetchType.LAZY) @JoinColumn(name="group_id",nullable=false) private StudyGroup group; @ManyToOne(fetch=FetchType.LAZY) @JoinColumn(name="author_id",nullable=false) private User author; @Column(nullable=false,length=2000) private String body; @Column(name="removed_at") private Instant removedAt; @Column(name="created_at",nullable=false) private Instant createdAt=Instant.now(); protected GroupMessage(){} public GroupMessage(StudyGroup g,User a,String body){group=g;author=a;this.body=body;} public Long getId(){return id;} public StudyGroup getGroup(){return group;} public User getAuthor(){return author;} public String getBody(){return body;} public Instant getCreatedAt(){return createdAt;} public boolean isRemoved(){return removedAt!=null;} public void remove(){removedAt=Instant.now();} }

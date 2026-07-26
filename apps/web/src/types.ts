@@ -1,0 +1,9 @@
+export type Me={id:number;email:string;role:'STUDENT'|'ADMIN';onboardingComplete:boolean};
+export type Enrollment={courseId:number;code:string;name:string;term:string};
+export type Availability={day:string;startTime:string;endTime:string};
+export type Profile={userId:number;displayName:string;major:string;interestsCsv:string;studyMode:string;onboardingComplete:boolean;courses:Enrollment[];availability:Availability[]};
+export type Match={userId:number;displayName:string;major:string;sharedCourses:string[];studyMode:string;score:number;reasons:string[]};
+export type Group={id:number;courseId:number;courseCode:string;name:string;description:string;capacity:number;studyMode:string;ownerId:number;approvedMembers:number;member:boolean;canManage:boolean};
+export type Message={id:number;authorId:number;authorName:string;body:string;createdAt:string;removed:boolean};
+export type Membership={id:number;userId:number;status:string;coordinator:boolean};
+export type StudySession={id:number;startsAt:string;endsAt:string;location:string;virtualUrl:string;agenda:string};

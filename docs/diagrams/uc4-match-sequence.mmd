@@ -1,0 +1,27 @@
+sequenceDiagram
+  actor Student
+  participant UI as React UI
+  participant API as Match API
+  participant Privacy as Authorization/DTO policy
+  participant DB as MySQL
+  Student->>UI: Open Matches
+  activate UI
+  UI->>API: GET /api/v1/matches
+  activate API
+  API->>Privacy: Require authenticated active student
+  activate Privacy
+  Privacy-->>API: Authorized
+  deactivate Privacy
+  API->>DB: Read courses, preferences, availability
+  activate DB
+  DB-->>API: Candidate data
+  deactivate DB
+  API->>API: Rank compatible candidates
+  API->>Privacy: Map to safe public match DTOs
+  activate Privacy
+  Privacy-->>API: No email or detailed availability
+  deactivate Privacy
+  API-->>UI: Explanations and safe match cards
+  deactivate API
+  UI-->>Student: Display results
+  deactivate UI

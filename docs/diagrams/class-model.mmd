@@ -1,0 +1,19 @@
+classDiagram
+  class User { +id +email +passwordHash +role +status }
+  class StudentProfile { +displayName +major +interestsCsv +studyMode }
+  class Course { +code +name }
+  class CourseEnrollment { +term +active }
+  class AvailabilityWindow { +day +startTime +endTime }
+  class StudyGroup { +name +capacity +studyMode }
+  class GroupMembership { +status +coordinator }
+  class StudySession { +startsAt +endsAt +location +virtualUrl }
+  class GroupMessage { +body +createdAt +removedAt }
+  class Report { +targetType +targetId +reason +status }
+  User "1" --> "1" StudentProfile
+  User "1" --> "*" CourseEnrollment
+  Course "1" --> "*" CourseEnrollment
+  User "1" --> "*" AvailabilityWindow
+  User "1" --> "*" GroupMembership
+  StudyGroup "1" --> "*" GroupMembership
+  StudyGroup "1" --> "*" StudySession
+  StudyGroup "1" --> "*" GroupMessage

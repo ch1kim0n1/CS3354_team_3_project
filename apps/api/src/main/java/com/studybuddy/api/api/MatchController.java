@@ -1,0 +1,3 @@
+package com.studybuddy.api.api;
+import com.studybuddy.api.api.ApiDtos.MatchResponse; import com.studybuddy.api.security.CurrentUser; import com.studybuddy.api.service.MatchingFacade; import java.util.*; import org.springframework.security.core.Authentication; import org.springframework.web.bind.annotation.*;
+@RestController @RequestMapping("/api/v1/matches") public class MatchController { private final CurrentUser current; private final MatchingFacade matches; public MatchController(CurrentUser current,MatchingFacade matches){this.current=current;this.matches=matches;} @GetMapping public List<MatchResponse> list(Authentication a){return matches.matches(current.require(a));} }
