@@ -58,4 +58,4 @@ Create focused feature branches, open pull requests into `main`, and keep the bu
 
 ## Deployment
 
-Use an always-on container platform and managed MySQL for production availability; a local machine or sleeping free-tier service does not satisfy the availability goal. Follow [deployment.md](docs/deployment.md) for environment variables, health checks, migrations, backups, and rollback. Railway-specific setup is in [railway.md](docs/railway.md).
+Use an always-on container platform and managed MySQL for production availability; a local machine or sleeping free-tier service does not satisfy the availability goal. Follow [deployment.md](docs/deployment.md) for environment variables, health checks, migrations, backups, and rollback.
